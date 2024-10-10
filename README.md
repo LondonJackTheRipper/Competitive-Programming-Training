@@ -1,4 +1,4 @@
-# Codeforces-Problemset
+# Competitive problemset
 A collection of solved problems in every competive programming-style platform.
 
 Hi, a little bit about my self, up to 2024, im currently 16 years old, i'm a vietnamese people with a strong passion about detective stories (my most favourite ones is **Sherlock Holmes**).
