@@ -43,11 +43,11 @@ ll inverse(ll up, ll down)
 	return (up * power(down, mod - 2)) % mod;
 }
 
-ll comb(int kk, int nn)
+ll comb(int k, int n)
 {
-	if (kk > nn) return 0;
-	ll up = factor[nn];
-	ll down = (factor[kk] * factor[nn - kk]) % mod;
+	if (k > n) return 0;
+	ll up = factor[n];
+	ll down = (factor[k] * factor[n - k]) % mod;
 	return inverse(up, down);
 }
 
@@ -64,17 +64,15 @@ void input()
 	int tmp = (k + 1) / 2;
 	ll res = 0;
 	
-    for (int tmp = (k + 1) / 2; tmp <= num1 && tmp <= k; tmp++) 
-	{
-        res = (res + comb(tmp, num1) * comb(k - tmp, num0) % mod) % mod;
-    }
+    	for (int tmp = (k + 1) / 2; tmp <= num1 && tmp <= k; tmp++) 
+        	res = (res + comb(tmp, num1) * comb(k - tmp, num0) % mod) % mod;
 	
 	cout << res << '\n';
 }
 
 int main()
 {
-   faster();
+   	faster();
    
 	init(2e5);
 
