@@ -57,19 +57,19 @@ void solve()
         if (res == a * (b + 1))
         {
         	ans = a + 1;
-            l = a + 1;
-            r = b;
+           	l = a + 1;
+            	r = b;
         } else
         if (res == (a + 1) * (b + 1))
         {
         	ans = a;
         	r = a;
-		}
+	}
         else
         {
         	ans = b + 1;
         	l = b + 1;
-		}
+	}
     }
 
     rep(ans);
