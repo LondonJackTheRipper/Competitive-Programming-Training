@@ -27,10 +27,10 @@ void input()
 
 int main()
 {
-   faster();
+   	faster();
 
 	lt[0] = 1;
-    for(int i = 1; i <= 15; i++) lt[i] = lt[i-1] * 3;
+    	for(int i = 1; i <= 15; i++) lt[i] = lt[i-1] * 3;
 	for (int i = 1; i <= 200000; i++)
 	{
         ll j = 0;
