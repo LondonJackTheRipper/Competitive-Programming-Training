@@ -10,4 +10,8 @@ This way, i will never concern about losing all the source codes of my problems.
 
 **Github** is a perfect place for not only myself but also you guys as you can also read my source code to.
 
-Having any questions about my code ? -> go DM me
+Having any questions about me your my source code -> go DM me in github or codeforces !
+
+**CODEFORCES** : [link](https://codeforces.com/profile/quangminh98) 
+**ATCODER** : [link](https://atcoder.jp/users/quangminh1412)
+**GITHUB** : [link](https://github.com/LondonJackTheRipper)
