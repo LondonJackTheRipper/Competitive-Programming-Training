@@ -30,7 +30,7 @@ signed main()
 // main program
 const int maxn = 2e5 + 9;
 
-int dp[maxn][3][8], arr[maxn];
+ll dp[maxn][3][8], arr[maxn];
 string s, str = "MEX";
 int n;
 
@@ -58,7 +58,7 @@ void solve()
             dp[i][pos][mask | (1 << arr[i])] += dp[i - 1][pos - 1][mask];
     }
 
-    int res = 0;
+    ll res = 0;
     for (int mask = 0; mask < 8; mask++)
     {
         if (dp[n][2][mask] == 0) continue;
