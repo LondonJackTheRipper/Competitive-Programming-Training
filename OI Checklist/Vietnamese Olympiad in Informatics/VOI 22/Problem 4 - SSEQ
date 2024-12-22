@@ -1,0 +1,84 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+/*
+  John Watson
+  Handle codeforces : quangminh98
+
+  Mua Code nhu mua Florentino !!
+*/
+
+#define ll long long
+
+const string name = "test";
+
+void solve();
+signed main()
+{
+    if (fopen((name + ".inp").c_str(), "r"))
+    {
+        freopen((name + ".inp").c_str(), "r", stdin);
+        freopen((name + ".out").c_str(), "w", stdout);
+    }
+    ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+
+    solve();
+
+    return 0;
+}
+
+// main program
+const int maxn = 1e6 + 9;
+
+struct Seg
+{
+    int l, r, w;
+
+    Seg() = default;
+    Seg(int l, int r, int w) : l(l), r(r), w(w) {};
+
+    bool operator < (const Seg& other) const
+    {
+        return r < other.r;
+    }
+};
+
+void solve()
+{
+    int n; cin >> n;
+    vector<Seg> segment(n);
+    for (Seg &it : segment)
+        cin >> it.l >> it.r >> it.w;
+
+    sort(segment.begin(), segment.end());
+    int pos = 0;
+    vector<ll> pre(maxn, 0);
+    for (int i = 1; i <= (int)1e6; i++)
+    {
+        pre[i] = pre[i - 1];
+
+        while (pos < n && segment[pos].r <= i)
+        {
+            if (segment[pos].r == i)
+                pre[i] += segment[pos].w;
+
+            pos++;
+        }
+    }
+
+    for (int i = 1; i <= 10; i++)
+        cout << pre[i] << '\n';
+    return;
+
+    ll res = 0;
+    ll mn = 0;
+    for (int i = 1; i <= (int)1e3; i++)
+    {
+        res = max(res, pre[i] - mn);
+        cout << pre[i] << ' ' << mn << '\n';
+
+        mn = min(mn, pre[i - 1]);
+    }
+
+    cout << res << '\n';
+}
