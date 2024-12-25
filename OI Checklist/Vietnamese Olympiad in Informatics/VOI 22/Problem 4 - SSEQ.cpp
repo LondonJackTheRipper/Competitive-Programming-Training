@@ -10,15 +10,15 @@ using namespace std;
 
 #define ll long long
 
-const string name = "test";
+const string name = "SSEQ";
 
 void solve();
 signed main()
 {
-    if (fopen((name + ".inp").c_str(), "r"))
+    if (fopen((name + ".INP").c_str(), "r"))
     {
-        freopen((name + ".inp").c_str(), "r", stdin);
-        freopen((name + ".out").c_str(), "w", stdout);
+        freopen((name + ".INP").c_str(), "r", stdin);
+        freopen((name + ".OUT").c_str(), "w", stdout);
     }
     ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 
@@ -38,8 +38,7 @@ struct SegmentTree
     {
         ll mn, lazy;
 
-        Node() = default;
-        Node(ll mn, ll lazy) : mn(mn), lazy(lazy) {}
+        Node(ll mn = 0, ll lazy = 0) : mn(mn), lazy(lazy) {}
 
         Node operator + (const Node& other)
         {
@@ -126,15 +125,16 @@ void solve()
     }
     sort(segs.begin(), segs.end());
 
-    int i = 0;
+    int idx = 0;
     ll pre = 0, res = 0;
     SegmentTree st(maxn);
-    for (int i = 1; i <= (int)1e6; i++)
+    for (int i = 1; i <= (int)6; i++)
     {
-        while (i < n && segs[i].r == i)
+        while (idx < n && segs[idx].r == i)
         {
-            pre++;
-            st.update(segs[i].l, i, segs[i].w);
+            pre += segs[idx].w;
+            st.update(segs[idx].l, i, segs[idx].w);
+            idx++;
         }
 
         res = max(res, pre - st.query(1, i));
