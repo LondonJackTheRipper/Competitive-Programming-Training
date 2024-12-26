@@ -1,0 +1,67 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+/*
+  John Watson
+  Handle codeforces : quangminh98
+
+  Mua Code nhu mua Florentino !!
+*/
+
+#define ll long long
+
+string name = "test";
+
+void solve();
+signed main()
+{
+    if (fopen((name + ".inp").c_str(), "r"))
+    {
+        freopen((name + ".inp").c_str(), "r", stdin);
+        freopen((name + ".out").c_str(), "w", stdout);
+    }
+    ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+
+    int t;
+    cin >> t;
+    while (t--) solve();
+
+    return 0;
+}
+
+// main program
+
+void solve()
+{
+    int n; cin >> n;
+    int a[n];
+    int mn = 2e9;
+    for (int i = 0; i < n; i++)
+    {
+        cin >> a[i];
+        mn = min(mn, a[i]);
+    }
+
+    vector<int> proc, mark(n, 0);
+    for (int i = 0; i < n; i++)
+        if (a[i] % mn == 0)
+        {
+            proc.push_back(a[i]);
+            mark[i] = 1;
+        }
+    sort(proc.begin(), proc.end());
+    int pos = 0, prev = -1e9;
+    for (int i = 0; i < n; i++)
+    {
+        int val = (mark[i] == 0 ? a[i] : proc[pos++]);
+
+        if (val < prev)
+        {
+            cout << "NO\n";
+            return;
+        }
+        prev = val;
+    }
+
+    cout << "YES\n";
+}
