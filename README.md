@@ -10,7 +10,7 @@ This way, I will never be preoccupied with losing all the source codes of my pro
 
 **Github** is a perfect place for not only myself but also you guys as you can also read my source code to.
 
-Having any questions about me your my source code -> go DM me in github or codeforces !
+Having any questions about me your my source code $\rightarrow$ go DM me in github or codeforces !
 
 **CODEFORCES** : [link](https://codeforces.com/profile/quangminh98) 
 
